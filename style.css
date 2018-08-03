@@ -1,0 +1,116 @@
+﻿body {
+  color: #444;
+  font-size: 20px;
+  font-family: sans-serif;
+  background-color: #f0f0f0;
+  margin: 0px;
+  padding: 0px;
+}
+
+a {
+  color: #444;
+  text-decoration: none;
+  border-bottom: 1px dashed #444;
+}
+a:hover{ color: #999; }
+a:active{ color:#faa700; }
+
+p{margin:1em 0;}
+
+img{display: block; max-width: 100%; margin: auto;}
+
+h1,h2,h3,h4,h5,h6 {
+  font-weight:normal;
+  color:#111;
+  line-height:1em;
+}
+h1,h2 { font-weight: bold; }
+h5,h6{ font-weight: bold; }
+h1{ font-size:2.5em; margin-bottom: 150px;}
+h2{ font-size:1.8em; border-bottom:1px solid silver; padding: 15px; }
+h3{ font-size:1.5em; display: inline-block; border-bottom:1px solid silver; padding 15px; }
+h4{ font-size:1.5em; display: inline-block; border-bottom:1px solid silver; }
+h5{ font-size:1.2em; }
+h6{ font-size:1em; }
+
+hr { display: block; height: 0; border: 0; border-bottom: 1px solid silver; margin: 1em 0; padding: 0; }
+
+ul, ol { margin: 1em 0; padding: 0 0 0 2em; }
+li p:last-child { margin:0 }
+img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
+
+.content {
+  width: 60%;
+  margin:auto;
+  padding: 50px;
+  background-color: white;
+  box-shadow: 0px 3px 8px #ccc;
+}
+
+p {
+  line-height: 2em;
+}
+
+em {
+  padding: 2px 5px;
+  margin: 0 3px;
+  font-style: normal;
+  background-color: #c2dfeb;
+  border-radius: 5px;
+}
+
+ul.words {
+  width: 80%;
+  list-style: none;
+  padding: 0;
+  margin: auto;
+}
+ul.words > li {
+  background-color: white;
+  border: 2px solid #c2dfeb;
+  border-radius: 6px;
+  margin: 10px 0 0 0;
+  padding: 10px 10px 10px 180px;
+  position: relative;
+}
+ul.words > li > ul {
+  list-style: none;
+}
+ul.words > li > em:first-child {
+  display: inline-block;
+  text-align: center;
+  border-radius: 4px 0 0 5px;
+  padding: 10px 0;
+  margin: 0;
+  width: 150px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+}
+
+ul.examples {
+  width: 80%;
+  list-style: none;
+  padding: 0;
+  margin: auto;
+}
+ul.examples > li {
+  background-color: #c2dfeb;
+  border-radius: 6px;
+  margin: 10px 0 0 0;
+  padding: 10px 10px 10px 30px;
+}
+ul.examples > li > ul{
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+ul.examples > li > ul > li {
+  background-color: #fff;
+  border: 2px solid #c2dfeb;
+  border-radius: 0 0 6px 6px;
+  margin: 10px -10px -10px -30px;
+  padding: 10px 10px 10px 30px;
+}
