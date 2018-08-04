@@ -31,3 +31,11 @@ javascript:(function(){var a=function(f){return document.getElementById(f)},b=do
 <textarea style="width:100%; height:10em" readonly>
 javascript:(function(){var a=function(f){return document.getElementById(f)},b=document.location.href;if(new RegExp('^https://twitter.com/[A-Za-z0-9_]+$').test(b)&&a('TSAMi')==null){var c=document.createElement('li'),d=document.getElementsByClassName('ProfileNav-list')[0],e=function(){document.location.href='https://twitter.com/search?q='+encodeURIComponent('from:@'+/[A-Za-z0-9_]+$/.exec(b)[0]+' '+a('TSAMi').value)};c.classList.add('ProfileNav-item');c.innerHTML='<input type="text" placeholder="アカウント内検索" id="TSAMi" autocomplete="off" spellcheck="false" aria-autocomplete="list" aria-expanded="false" aria-owns="typeahead-dropdown-8"><button class="Icon Icon--medium Icon--search" tabindex="-1" id="TSAMb"></button>';d.insertBefore(c,d.lastChild);a('TSAMb').onclick=e;a('TSAMi').onkeydown=function(f){if(f.keyCode==13)e()}}})()
 </textarea>
+
+### 最小限版
+
+<textarea style="width:100%; height:10em" readonly>
+javascript:(function(){var a=function(f){return document.getElementById(f)},b=document.location.href;if(new RegExp('^https://twitter.com/[A-Za-z0-9_]+$').test(b)&&a('TSAMi')==null){var c=document.createElement('li'),d=document.getElementsByClassName('ProfileNav-list')[0],e=function(){document.location.href='https://twitter.com/search?q='+encodeURIComponent('from:@'+/[A-Za-z0-9_]+$/.exec(b)[0]+' '+a('TSAMi').value)};c.classList.add('ProfileNav-item');c.innerHTML='<input type="text" id="TSAMi"><button class="Icon Icon--medium Icon--search" tabindex="-1" id="TSAMb"></button>';d.insertBefore(c,d.lastChild);a('TSAMb').onclick=e;a('TSAMi').onkeydown=function(f){if(f.keyCode==13)e()}}})()
+</textarea>
+
+[ソースコード](twitterSearchAccountMod.js)
