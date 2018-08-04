@@ -1,33 +1,33 @@
-(function(){
-	//’Zk‚Ì‚½‚ß
+ï»¿(function(){
+	//çŸ­ç¸®ã®ãŸã‚
 	var $ = function(f){ return document.getElementById(f); };
-	//URL‚ğæ“¾
+	//URLã‚’å–å¾—
 	var url = document.location.href;
-	//URL‚ªTwitter‚Ìƒ†[ƒU[ƒy[ƒW‚ÅA‚©‚Â“Æ©‚ÌŒŸõ‘‹‚ª‘¶İ‚µ‚È‚¢ê‡‚Ì‚İˆ—
+	//URLãŒTwitterã®ãƒ¦ãƒ¼ã‚¶ãƒ¼ãƒšãƒ¼ã‚¸ã§ã€ã‹ã¤ç‹¬è‡ªã®æ¤œç´¢çª“ãŒå­˜åœ¨ã—ãªã„å ´åˆã®ã¿å‡¦ç†
 	if(new RegExp('^https://twitter.com/[A-Za-z0-9_]+$').test(url)&&$('TSAMi')==null)
 	{
-		//’Ç‰Á‚·‚éŒŸõ‘‹‚ÌƒIƒuƒWƒFƒNƒg‚ğì‚éiTwitterƒy[ƒW‚Ìƒ\[ƒX‚ğ“Ç‚ñ‚ÅAŒö®‚ÌŒŸõ‘‹‚ÌƒXƒ^ƒCƒ‹‚ğÄŒ»j
+		//è¿½åŠ ã™ã‚‹æ¤œç´¢çª“ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’ä½œã‚‹ï¼ˆTwitterãƒšãƒ¼ã‚¸ã®ã‚½ãƒ¼ã‚¹ã‚’èª­ã‚“ã§ã€å…¬å¼ã®æ¤œç´¢çª“ã®ã‚¹ã‚¿ã‚¤ãƒ«ã‚’å†ç¾ï¼‰
 		var myObject = document.createElement('li');
 		myObject.classList.add('ProfileNav-item');
-		myObject.innerHTML = '<div style="float:left;height:33px;font-size:12px;width:221px;position:relative"><input type="text" placeholder="ƒAƒJƒEƒ“ƒg“àŒŸõ" id="TSAMi" autocomplete="off" spellcheck="false" aria-autocomplete="list" aria-expanded="false" aria-owns="typeahead-dropdown-8" style="background-color:#f5f8fa;border-radius:21px;border:1px solid #e6ecf0;-moz-box-sizing:border-box;box-sizing:border-box;color:#14171a;display:block;font-size:12px;height:32px;line-height:16px;padding:8px 32px 8px 12px;transition:all .2s ease-in-out;width:100%" /><span style="cursor:pointer;display:block;height:26px;position:absolute;right:3px;top:6px;width:26px"><button class="Icon Icon--medium Icon--search" tabindex="-1" id="TSAMb" style="color:#66757f"></button></span></div>';
+		myObject.innerHTML = '<div style="float:left;height:33px;font-size:12px;width:221px;position:relative"><input type="text" placeholder="ã‚¢ã‚«ã‚¦ãƒ³ãƒˆå†…æ¤œç´¢" id="TSAMi" autocomplete="off" spellcheck="false" aria-autocomplete="list" aria-expanded="false" aria-owns="typeahead-dropdown-8" style="background-color:#f5f8fa;border-radius:21px;border:1px solid #e6ecf0;-moz-box-sizing:border-box;box-sizing:border-box;color:#14171a;display:block;font-size:12px;height:32px;line-height:16px;padding:8px 32px 8px 12px;transition:all .2s ease-in-out;width:100%" /><span style="cursor:pointer;display:block;height:26px;position:absolute;right:3px;top:6px;width:26px"><button class="Icon Icon--medium Icon--search" tabindex="-1" id="TSAMb" style="color:#66757f"></button></span></div>';
 		
-		//ƒ†[ƒU[ƒy[ƒW‚ÌƒiƒrƒQ[ƒVƒ‡ƒ“ƒo[‚É’Ç‰Á
+		//ãƒ¦ãƒ¼ã‚¶ãƒ¼ãƒšãƒ¼ã‚¸ã®ãƒŠãƒ“ã‚²ãƒ¼ã‚·ãƒ§ãƒ³ãƒãƒ¼ã«è¿½åŠ 
 		var naviBarObject = document.getElementsByClassName('ProfileNav-list')[0]
 		naviBarObject.insertBefore(myObject, naviBarObject.lastChild);
 		
-		//ŒŸõ‘‹‚ÌƒeƒLƒXƒg‚ğ“Ç‚İæ‚èAfrom:@ƒ†[ƒU[ƒl[ƒ€‚ğ‚­‚Á•t‚¯‚ÄŒŸõƒy[ƒW‚É”ò‚ÔƒAƒNƒVƒ‡ƒ“
+		//æ¤œç´¢çª“ã®ãƒ†ã‚­ã‚¹ãƒˆã‚’èª­ã¿å–ã‚Šã€from:@ãƒ¦ãƒ¼ã‚¶ãƒ¼ãƒãƒ¼ãƒ ã‚’ãã£ä»˜ã‘ã¦æ¤œç´¢ãƒšãƒ¼ã‚¸ã«é£›ã¶ã‚¢ã‚¯ã‚·ãƒ§ãƒ³
 		var searchAction = function(){
 			document.location.href =
 				'https://twitter.com/search?q=' + 
 				encodeURIComponent(
 					'from:@' + 
-					/[A-Za-z0-9_]+$/.exec(url)[0] + //ƒ†[ƒU[–¼
+					/[A-Za-z0-9_]+$/.exec(url)[0] + //ãƒ¦ãƒ¼ã‚¶ãƒ¼å
 					' ' + 
-					$('TSAMi').value //ŒŸõ‘‹‚Ì“ü—Í“à—e
+					$('TSAMi').value //æ¤œç´¢çª“ã®å…¥åŠ›å†…å®¹
 				);
 			};
 		
-		//ƒ{ƒ^ƒ“ƒNƒŠƒbƒN‚ÆEnterƒL[‰Ÿ‰º‚ÉƒAƒNƒVƒ‡ƒ“‚ª‘–‚é‚æ‚¤‚Éİ’èiHTMLƒ^ƒO‚É’¼Ú‘®«‚Æ‚µ‚Ä‘‚«‚Ş‚Æ“{‚ç‚ê‚½j
+		//ãƒœã‚¿ãƒ³ã‚¯ãƒªãƒƒã‚¯æ™‚ã¨Enterã‚­ãƒ¼æŠ¼ä¸‹æ™‚ã«ã‚¢ã‚¯ã‚·ãƒ§ãƒ³ãŒèµ°ã‚‹ã‚ˆã†ã«è¨­å®šï¼ˆHTMLã‚¿ã‚°ã«ç›´æ¥å±æ€§ã¨ã—ã¦æ›¸ãè¾¼ã‚€ã¨æ€’ã‚‰ã‚ŒãŸï¼‰
 		$('TSAMb').onclick = searchAction;
 		$('TSAMi').onkeydown = function(f){ if(f.keyCode==13) searchAction(); };
 	}
